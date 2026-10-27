@@ -1,0 +1,8 @@
+{
+  "name": "QuantumGate Cloud Lab",
+  "description": "Interactive Quantum Circuit Simulator and Learning Platform — explore quantum gates, construct circuits, simulate state vectors, experiment with entanglement, and master quantum computing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

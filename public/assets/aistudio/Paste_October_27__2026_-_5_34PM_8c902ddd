@@ -1,0 +1,900 @@
+# PROJECT MASTER PROMPT: QUANTUMGATE CLOUD LAB
+
+## Project Title
+QuantumGate Cloud Lab — Interactive Quantum Circuit Simulator and Learning Platform
+
+## Project Track
+Track 5: Quantum Cloud-Based Applications
+
+## 1. YOUR ROLE
+
+Act as a senior full-stack developer, quantum computing engineer, UI/UX designer, educational technology specialist, and software tester.
+
+Build a complete, professional, responsive, beautiful, and genuinely functional web application called **QuantumGate Cloud Lab**.
+
+Do not create only a landing page, static mockup, or non-functional prototype. Implement the actual website, functional navigation, interactive components, correct quantum calculations, working learning modules, tests, and persistent student progress.
+
+Prioritize correctness, usability, visual quality, and working features over unnecessary complexity.
+
+## 2. PROBLEM STATEMENT
+
+Understanding quantum computing is difficult for beginners because quantum mechanics introduces unfamiliar concepts such as superposition, interference, entanglement, quantum measurement, and complex probability amplitudes. Learning quantum gates and quantum circuits often requires mathematical knowledge and access to specialized software or quantum computing hardware.
+
+QuantumGate Cloud Lab aims to solve this problem by providing an accessible, interactive quantum computing learning environment through which students can explore quantum gates, construct quantum circuits, simulate quantum operations, visualize measurement probabilities, experiment with entanglement, identify circuit errors, complete guided laboratories, and evaluate their knowledge.
+
+The platform should make quantum computing understandable to beginners while providing sufficient mathematical detail, practical experiments, and programming examples for engineering students and more advanced learners.
+
+Students should be able to learn and experiment directly in their web browser without requiring a local quantum computing installation or physical quantum hardware.
+
+## 3. MOST IMPORTANT REQUIREMENT: NAME-ONLY ENTRY
+
+When a student first opens the website, display an impressive full-screen welcome page.
+
+The welcome page must ask for exactly one piece of information:
+
+**Student Name**
+
+Include:
+- A single student-name input field.
+- A beautiful welcome message.
+- An animated quantum particle background.
+- Floating qubits or subtle circuit-line animations.
+- A premium futuristic laboratory illustration.
+- A button labeled "Enter Quantum Lab".
+- Input validation that rejects an empty or whitespace-only name.
+- A friendly greeting after successful entry.
+
+Example:
+
+"Welcome to QuantumGate Cloud Lab"
+
+"Your journey into the quantum universe begins here."
+
+"Enter your name to initialize your personal quantum laboratory."
+
+After the student enters their name, open the main dashboard immediately.
+
+IMPORTANT:
+- Do not create a login or registration page.
+- Do not ask for email, phone number, password, institution, roll number, or other personal information.
+- Do not require an account or external authentication.
+- Do not display the name-entry screen again on every refresh when a name is already saved.
+- Add an optional "Change Student Name" action in the profile or settings area.
+- Store the student name and learning progress locally using localStorage for this frontend-first version.
+- Allow the student to reset their learning progress from settings after confirmation.
+- Escape or safely render user-entered names to prevent HTML injection.
+- Do not transmit student information to an external service.
+
+The website must remain usable without any external API keys.
+
+## 4. TECHNOLOGY AND IMPLEMENTATION
+
+Use the environment supported by Google AI Studio. Prefer:
+
+- React
+- TypeScript
+- Modern CSS or Tailwind CSS if already configured correctly
+- Reusable React components
+- React Router or a reliable client-side navigation system
+- Lucide icons or another consistent icon library
+- Recharts for real data visualizations when available
+- KaTeX or MathJax for mathematical equations when available
+- localStorage for name, settings, saved circuits, progress, and test history
+
+If a backend is supported and configured, Python with FastAPI and Qiskit with Qiskit Aer can provide genuine backend quantum simulation.
+
+However, the core website must work without a backend. Implement an actual browser-based quantum simulator using a correct state-vector implementation for supported gates and circuit sizes.
+
+Do not pretend a backend exists if it has not been implemented. Do not require API keys just to open the website.
+
+Create a clean and maintainable project structure with components, pages, data, quantum utilities, circuit logic, assessment logic, and storage utilities.
+
+Use stable compatible dependencies. Inspect the available environment before modifying configuration files. Preserve working project configuration.
+
+## 5. VISUAL DESIGN: PREMIUM QUANTUM LABORATORY
+
+Design a sophisticated, futuristic, science-inspired user interface.
+
+### Color palette
+- Deep midnight navy background.
+- Dark indigo and violet surfaces.
+- Electric cyan highlights.
+- Restrained purple and magenta gradients.
+- White primary text.
+- Muted blue-gray secondary text.
+- Clear green, amber, and red status colors.
+
+### Design requirements
+- Premium scientific dashboard.
+- Clean typography and generous spacing.
+- Beautiful quantum-inspired illustrations.
+- Smooth but lightweight animations.
+- Interactive gate diagrams.
+- Elegant probability charts.
+- Glass-like panels used selectively.
+- Subtle gradients and particle effects.
+- Beautiful empty states with useful actions.
+- Consistent icons and button styles.
+- Responsive sidebar and navigation.
+- Light and dark themes.
+- Toast notifications for successful actions and errors.
+- Loading, success, warning, and empty states.
+- Accessible color contrast.
+- Keyboard-friendly navigation.
+- Mobile, tablet, laptop, and desktop support.
+
+Avoid excessive glowing effects, random emojis, repetitive generic cards, clutter, broken layouts, oversized empty areas, and decorative charts that display fabricated results.
+
+Use animations to support learning rather than distract from it.
+
+## 6. MAIN APPLICATION LAYOUT
+
+After name entry, display a persistent application shell with:
+
+- A collapsible left sidebar on desktop.
+- A responsive navigation drawer on smaller screens.
+- A top header with the current module title.
+- Student greeting and profile menu.
+- A search control for finding gates, lessons, labs, and concepts.
+- Theme toggle.
+- Notifications or achievement updates where useful.
+- A main content area that changes when navigation tabs are selected.
+
+Use these primary navigation tabs:
+
+1. Dashboard
+2. Quantum Academy
+3. Gate Explorer
+4. Circuit Studio
+5. Quantum Simulator
+6. Entanglement Lab
+7. Quantum Labs
+8. Circuit Debugger
+9. Practice Arena
+10. Tests & Assessments
+11. Learning Analytics
+12. Saved Circuits
+13. Achievements
+14. Settings
+
+Every tab must open a distinct, working module. Do not create tabs that lead to blank pages or placeholder content.
+
+Preserve circuit state when the student switches between modules. Use consistent navigation, breadcrumbs where appropriate, and helpful empty states.
+
+## 7. DASHBOARD
+
+Build a personalized dashboard showing:
+
+- "Welcome back, [Student Name]".
+- A short motivational learning message.
+- Overall learning progress.
+- Number of completed lessons.
+- Practice questions attempted.
+- Latest assessment score.
+- Number of completed labs.
+- Saved circuit count.
+- Learning streak based on actual activity.
+- Recent activity.
+- Recommended next lesson.
+- Daily quantum challenge.
+- Quick-access actions.
+- Recently opened circuits.
+- Achievement progress.
+- A visual learning roadmap.
+
+Use actual locally stored data. On a new profile, show accurate zero-progress values and useful suggested activities.
+
+Add a "Continue Learning" action that opens the next incomplete lesson or the most recent unfinished activity.
+
+Include a daily challenge that can be completed, scored, and recorded.
+
+## 8. QUANTUM ACADEMY
+
+Create a structured learning center with three levels.
+
+### Beginner
+- Classical bits versus qubits.
+- What is quantum computing?
+- Introduction to quantum states.
+- Computational basis states |0⟩ and |1⟩.
+- Quantum superposition.
+- Quantum measurement.
+- Introduction to quantum gates.
+- Understanding probability amplitudes.
+
+### Intermediate
+- Hadamard transformations.
+- Pauli gates.
+- Quantum phase.
+- Quantum interference.
+- Controlled quantum operations.
+- Multi-qubit systems.
+- Entanglement.
+- State vectors and measurement probabilities.
+- Quantum circuit diagrams.
+
+### Advanced
+- Unitary transformations.
+- Rotation gates.
+- Bell states.
+- Quantum teleportation.
+- Superdense coding.
+- Quantum Fourier transform.
+- Introduction to Grover's algorithm.
+- Noise and decoherence.
+- Ideal simulation versus real quantum hardware.
+
+Each lesson must include:
+- Clear learning objectives.
+- Beginner-friendly explanations.
+- Technical explanations where useful.
+- Mathematical notation.
+- Circuit diagrams.
+- Worked examples.
+- Interactive experiments.
+- Short knowledge checks.
+- Mark-as-complete functionality.
+- Next and previous lesson controls.
+- Links to relevant gates and labs.
+
+Do not mark a lesson complete merely because it was opened. Require the learner to finish its essential activity or knowledge check.
+
+Display estimated reading time, difficulty, and actual completion status.
+
+## 9. COMPLETE QUANTUM GATE EXPLORER
+
+Build a searchable and filterable encyclopedia of quantum gates.
+
+### Single-qubit gates
+- Identity I
+- Pauli-X
+- Pauli-Y
+- Pauli-Z
+- Hadamard H
+- Phase S
+- S-dagger
+- T
+- T-dagger
+- Square-root of X SX
+- RX rotation
+- RY rotation
+- RZ rotation
+- U3 or its supported equivalent
+
+### Multi-qubit gates
+- Controlled-NOT CNOT/CX
+- Controlled-Z CZ
+- Controlled phase CP
+- SWAP
+- Controlled-SWAP/Fredkin
+- Toffoli/CCX
+- Controlled rotations
+
+Organize the gates by:
+- Number of qubits.
+- Beginner, intermediate, and advanced levels.
+- Gate family.
+- Typical use.
+- Parameterized versus non-parameterized gates.
+
+### Every gate detail page must contain
+1. Gate name and symbol.
+2. Short definition.
+3. Purpose and intuition.
+4. Mathematical matrix.
+5. State transformation.
+6. Input and output state examples.
+7. Circuit symbol.
+8. Qiskit equivalent.
+9. Step-by-step explanation.
+10. Practical applications.
+11. Common misconceptions.
+12. Related gates.
+13. Interactive input-state selector.
+14. Apply-gate button.
+15. Resulting state vector where supported.
+16. Measurement probabilities.
+17. Interactive probability chart.
+18. A suitable Bloch sphere visualization for single-qubit pure states.
+19. A short practice exercise.
+20. A relevant educational video link.
+
+Create a gate video library using verified educational YouTube links. Do not invent video IDs or display broken embeds. If a link cannot be verified, provide a clearly labeled YouTube search link for the gate topic instead.
+
+Use correct matrices, phase conventions, and basis ordering. Explain that quantum gates operate on amplitudes and that measurement probabilities are the squared magnitudes of amplitudes.
+
+For controlled gates, clearly identify control and target qubits.
+
+## 10. INTERACTIVE QUANTUM CIRCUIT STUDIO
+
+Build a real circuit construction workspace.
+
+The interface should include:
+
+- A gate toolbox.
+- A circuit canvas.
+- Qubit wires.
+- Optional classical-bit wires.
+- Operation columns.
+- A selected-operation inspector.
+- Circuit properties.
+- A simulation panel.
+- Generated Qiskit code.
+- Save, load, export, undo, redo, and reset actions.
+
+Allow students to:
+- Add or remove qubits within a safe supported limit.
+- Add and remove gates.
+- Place gates at specific positions.
+- Select and edit gate parameters.
+- Add measurement operations.
+- Connect control and target qubits.
+- Reorder or remove operations.
+- Undo and redo circuit changes.
+- Clear a circuit after confirmation.
+- Load example circuits.
+- Save circuits using meaningful names.
+- Rename, duplicate, and delete saved circuits.
+- Export the circuit representation as JSON.
+- Download a circuit diagram as SVG or PNG where supported.
+- View equivalent Qiskit code.
+- Copy code to the clipboard.
+- Run the circuit.
+- View validation messages.
+
+Support a practical set of gates initially, including X, Y, Z, H, S, T, RX, RY, RZ, CNOT, CZ, SWAP, and measurement.
+
+Use a single authoritative circuit data model. The circuit drawing, Qiskit code, validation, and simulation must all derive from that same model.
+
+Implement real drag-and-drop if the environment supports it reliably. Otherwise, provide a clear and functional click-to-select-gate, then click-qubit-and-position workflow.
+
+Do not display fake controls that appear functional but do nothing.
+
+## 11. QUANTUM SIMULATOR
+
+Build a working state-vector simulator for supported circuits.
+
+The simulator should support:
+- Configurable qubit count within safe limits.
+- Circuit execution.
+- State-vector calculation.
+- Measurement probability calculation.
+- Repeated measurement shots.
+- Measurement count histograms.
+- Probability distributions.
+- Resetting the circuit.
+- Comparing theoretical probabilities with sampled outcomes.
+- Running example circuits.
+- Saving simulation results.
+- Downloading results as JSON or CSV.
+- Showing explanatory intermediate steps where supported.
+
+Use complex-number amplitudes and correct quantum state evolution.
+
+Initialize a circuit in |00...0⟩. Apply gates in the correct order and respect the declared qubit indexing convention.
+
+Use correct unitary matrices for supported gates. Implement controlled operations without corrupting the state vector. Normalize states when mathematically appropriate and validate numerical results.
+
+Measurement sampling must use the correct outcome probabilities. A repeated run may produce different counts due to finite sampling.
+
+Explain the difference between:
+- State-vector amplitudes.
+- Measurement probabilities.
+- Individual measurement outcomes.
+- Repeated shot counts.
+- Ideal simulation.
+- Noisy simulation.
+- Actual quantum hardware execution.
+
+Do not claim to simulate physical noise unless a noise model has actually been implemented.
+
+Do not claim that a local browser simulation ran on a quantum computer.
+
+Provide example circuits:
+- Identity circuit.
+- X gate producing |1⟩ from |0⟩.
+- Hadamard superposition.
+- H followed by H returning to the original state.
+- Bell-state preparation using H and CNOT.
+- Simple phase-gate experiment.
+- Three-qubit GHZ-state preparation.
+
+Every displayed probability chart must be calculated from the actual circuit result.
+
+## 12. ENTANGLEMENT PLAYGROUND
+
+Create a visually engaging interactive entanglement laboratory.
+
+Include:
+- Two-qubit and supported multi-qubit experiments.
+- H and CNOT gate construction.
+- Bell-state generation.
+- GHZ-state demonstration.
+- Circuit visualization.
+- State-vector display.
+- Measurement probability chart.
+- Repeated measurement sampling.
+- Correlation table.
+- Reset and rebuild controls.
+- Side-by-side comparison of separable and entangled states.
+
+Include clear explanations of:
+- Superposition.
+- Entanglement.
+- Bell states.
+- Correlated measurement outcomes.
+- Quantum measurement.
+- Why entanglement does not enable faster-than-light communication.
+
+Use correct calculations. For the standard Bell state, demonstrate the expected ideal probabilities for |00⟩ and |11⟩, taking the declared qubit-ordering convention into account.
+
+Allow the learner to change the initial state, apply operations, and observe the calculated results.
+
+## 13. GUIDED QUANTUM LABORATORIES
+
+Create the following guided experiments:
+
+1. Your First Qubit
+2. Exploring the Pauli-X Gate
+3. Creating Superposition with Hadamard
+4. Understanding Quantum Phase
+5. Quantum Interference with H-H
+6. Building a Bell State
+7. Exploring CNOT
+8. Quantum Measurement
+9. Quantum Teleportation
+10. Superdense Coding
+11. Introduction to Grover's Search
+12. Introduction to Quantum Fourier Transform
+
+Each lab should contain:
+- Learning objectives.
+- Prerequisites.
+- Estimated time.
+- Step-by-step instructions.
+- An editable circuit.
+- A run-simulation action.
+- Expected theoretical results.
+- Actual simulation results.
+- Explanation of any differences.
+- Questions to answer.
+- Hints.
+- Reset controls.
+- A completion indicator.
+
+Use accurate, appropriately simplified circuits for advanced demonstrations. Explain any omitted classical communication, oracle assumptions, or other simplifications.
+
+Record completion only after the required experiment and questions have been completed.
+
+## 14. CIRCUIT DEBUGGER
+
+Create a dedicated Circuit Debugger module.
+
+The student should be able to:
+- Open an existing circuit.
+- Build a circuit for analysis.
+- Paste supported Qiskit-style code.
+- Validate the circuit structure.
+- Run a simulation if the circuit is valid.
+- Ask for an explanation of its behavior.
+- Specify an intended outcome when they want to check whether a circuit achieves a goal.
+
+Detect issues such as:
+- Invalid qubit indices.
+- Unsupported operations.
+- Invalid rotation parameters.
+- Invalid control-target connections.
+- Invalid circuit data.
+- Missing measurements when sampled measurement counts are requested.
+- Unsupported code syntax.
+- Potential mismatch between a stated goal and the actual result.
+
+For each issue, display:
+- Issue title.
+- Severity.
+- Operation or code location.
+- Explanation.
+- Suggested correction.
+- Corrected operation or circuit where appropriate.
+- Original and corrected simulation results where available.
+- A button to apply the fix.
+
+Clearly distinguish definite errors from possible conceptual mistakes and unexpected but valid behavior.
+
+If a circuit is valid, explicitly state that no definite structural error was detected.
+
+Do not call every unexpected result a bug. Ask for the intended outcome when the user's goal is unclear.
+
+Never invent simulation outputs or claim to run arbitrary Qiskit code unless it has actually been executed in a secure, supported environment.
+
+For the frontend-only implementation, parse only a documented subset of Qiskit-like operations. Do not use JavaScript eval or execute pasted source code directly. Provide clear messages for unsupported syntax.
+
+## 15. PRACTICE ARENA
+
+Build a separate practice environment where students can learn without formal test pressure.
+
+Include:
+- Multiple-choice questions.
+- Match a gate with its purpose.
+- Identify circuit symbols.
+- Predict output states.
+- Calculate measurement probabilities.
+- Identify the missing gate.
+- Arrange circuit operations.
+- Interpret probability histograms.
+- Answer basic Qiskit questions.
+- Correct simple conceptual mistakes.
+
+Provide beginner, intermediate, and advanced difficulty settings.
+
+After every answer, display:
+- Whether it was correct.
+- The correct answer.
+- A clear explanation.
+- Relevant equations where appropriate.
+- Why distractors are incorrect when useful.
+- A retry action.
+- A link to the relevant lesson.
+
+Record actual attempts and accuracy.
+
+Avoid repeating the same questions unnecessarily when a sufficiently large question bank is available.
+
+## 16. FORMAL TESTS AND ASSESSMENTS
+
+Create a separate Tests & Assessments module.
+
+Allow students to select:
+- An individual gate test.
+- A topic-based test.
+- A full quantum gates assessment.
+- A mixed quantum computing test.
+
+Every formal test must contain exactly 25 questions.
+
+Divide the test into five stages with five questions per stage:
+
+1. Fundamentals.
+2. Basic applications.
+3. Intermediate understanding.
+4. Advanced applications.
+5. Challenging problem-solving.
+
+Include conceptual questions, matrix calculations, state transformations, circuit interpretation, measurement probabilities, gate comparisons, and Qiskit code interpretation.
+
+Test interface:
+- Question counter.
+- Progress bar.
+- Timer.
+- Answer options.
+- Previous and next controls.
+- Clear submission confirmation.
+- Review of unanswered questions.
+- Final submission.
+- Results page.
+
+Shuffle questions and answer options using a verified question bank. Keep a test attempt stable across refreshes. Do not regenerate its questions halfway through an attempt.
+
+All correct answers and scoring rules must be consistent with the actual mathematical content.
+
+At the end, display:
+- Score out of 25.
+- Percentage.
+- Pass or improvement status.
+- Correct and incorrect responses.
+- Explanation for every question.
+- Time taken.
+- Performance by topic and difficulty.
+- Recommended lessons.
+- Retake test button.
+
+Use a configurable passing threshold, initially 70%.
+
+A student with a low score must receive a constructive improvement plan with the topics to review, suggested labs, and targeted practice questions.
+
+Unlock the comprehensive assessment only after the required individual gate tests have genuinely been completed. For this version, use clear and verifiable completion rules rather than pretending that visiting a test page counts as completion.
+
+Store test history locally.
+
+If the app is frontend-only, describe local scoring accurately. Do not claim that client-side scoring is secure against tampering or equivalent to a proctored examination.
+
+Optional focus-change warnings may be included, but disclose them before the test and do not treat a browser tab switch as proof of cheating.
+
+## 17. LEARNING ANALYTICS
+
+Create a dashboard with real progress data:
+
+- Lesson completion.
+- Practice accuracy.
+- Test score history.
+- Lab completion.
+- Time spent when reliably measured.
+- Gate knowledge.
+- Topic-wise strengths and weaknesses.
+- Learning streak.
+- Recent activity.
+- Recommended next steps.
+
+Use charts based on locally recorded data, not sample numbers presented as real student progress.
+
+Include:
+- Score trend chart.
+- Topic performance chart.
+- Learning activity timeline.
+- Completion progress chart.
+- Strengths and improvement areas.
+
+Show a useful first-time state when there is insufficient data to draw a meaningful chart.
+
+Allow the student to export their learning summary as JSON or CSV.
+
+## 18. PERSONALIZED IMPROVEMENT COACH
+
+Create a rule-based learning coach that uses actual practice and assessment results.
+
+Examples:
+- If the student struggles with Hadamard questions, recommend the Hadamard lesson and superposition lab.
+- If measurement probabilities are weak, recommend probability calculations and simulator experiments.
+- If CNOT questions are weak, recommend controlled-gate explanations and Bell-state practice.
+- If the student scores below 70%, provide a structured revision plan.
+- If the student performs consistently well, recommend advanced lessons.
+
+Show:
+- Current difficulty.
+- Topics needing attention.
+- Recommended lesson.
+- Recommended experiment.
+- A short action plan.
+- A way to retake targeted practice.
+
+Do not label a topic weak without sufficient recorded evidence. Clearly mark recommendations based on limited attempts as preliminary.
+
+Do not require an AI API key for these core recommendations.
+
+## 19. SAVED CIRCUITS
+
+Create a functional circuit library.
+
+Students must be able to:
+- Save a circuit.
+- Enter a circuit name.
+- Add a description.
+- Rename a circuit.
+- Duplicate a circuit.
+- Open it in Circuit Studio.
+- Run its simulation.
+- Export its data.
+- Delete it after confirmation.
+- Sort and search saved circuits.
+
+Persist the circuit data in localStorage and validate it before loading.
+
+Include example circuits students can duplicate and edit.
+
+## 20. ACHIEVEMENTS AND GAMIFICATION
+
+Implement meaningful achievements such as:
+- First Visit.
+- First Lesson Completed.
+- Gate Explorer.
+- First Circuit Built.
+- First Successful Simulation.
+- Superposition Explorer.
+- Entanglement Explorer.
+- Lab Completed.
+- Practice Champion.
+- Assessment Passed.
+- Quantum Mastery.
+
+Unlock achievements only when their real conditions are met.
+
+Show progress toward locked achievements and explain how to unlock them.
+
+Use subtle celebrations when an achievement is earned. Avoid rewarding meaningless repeated clicks.
+
+## 21. SETTINGS
+
+Provide:
+- Change student name.
+- Light and dark theme.
+- Adjustable text size.
+- Reduced-motion preference.
+- Sound effects toggle, disabled by default.
+- Data export.
+- Reset learning progress.
+- Clear saved circuits.
+- Delete all locally stored student data.
+- Application information.
+- Supported features and limitations.
+
+Ask for confirmation before destructive actions.
+
+Provide keyboard navigation and accessible labels.
+
+## 22. SEARCH, HELP, AND DISCOVERABILITY
+
+Implement global search across:
+- Quantum gates.
+- Lessons.
+- Labs.
+- Simulator examples.
+- Practice topics.
+- Quantum concepts.
+
+Show meaningful search results that open the corresponding module.
+
+Include a searchable glossary for terms such as qubit, superposition, amplitude, phase, measurement, entanglement, unitary matrix, circuit depth, and quantum state.
+
+Add contextual help, tooltips for unfamiliar symbols, and a beginner guide.
+
+## 23. MATHEMATICAL CORRECTNESS
+
+Scientific correctness is mandatory.
+
+Follow these principles:
+- Use correct quantum gate matrices.
+- Preserve complex amplitudes.
+- Apply operations in the correct circuit order.
+- Use a consistent and documented basis-ordering convention.
+- Use squared amplitude magnitudes to compute measurement probabilities.
+- Normalize states where appropriate.
+- Correctly implement controlled and multi-qubit gates.
+- Use appropriate measurement sampling.
+- Distinguish amplitudes from probabilities.
+- Distinguish ideal simulations from hardware results.
+- Explain global phase and relative phase accurately.
+- Do not claim that a measured outcome reveals the full quantum state.
+- Do not claim that entanglement transmits information faster than light.
+
+Create automated unit tests for important quantum calculations.
+
+At minimum, test:
+1. X maps |0⟩ to |1⟩.
+2. X maps |1⟩ to |0⟩.
+3. H applied to |0⟩ creates equal computational-basis probabilities.
+4. H followed by H returns the initial state.
+5. Applying Z to |0⟩ leaves its physical state unchanged.
+6. Two H gates do not produce an incorrect random final result.
+7. CNOT acts correctly for all computational-basis control and target inputs.
+8. H plus CNOT creates the expected Bell state.
+9. Measurement probabilities sum to one within numerical tolerance.
+10. Sampled measurement counts sum to the requested shot count.
+11. SWAP exchanges the relevant qubit states correctly.
+12. Rotation gates produce the correct expected transformations.
+
+Use reproducible randomness in tests when necessary.
+
+## 24. RELIABILITY AND ERROR HANDLING
+
+Every visible interactive control must perform its advertised action.
+
+Implement:
+- Form validation.
+- Helpful error messages.
+- Safe localStorage access.
+- Recovery from malformed saved data.
+- Confirmation before destructive actions.
+- Circuit input validation.
+- Safe handling of unsupported gates.
+- Error boundaries for major UI sections.
+- Graceful handling of missing optional libraries.
+- Empty states and useful defaults.
+- Keyboard-accessible dialogs.
+- Persistent progress where practical.
+
+Do not silently swallow errors.
+
+Do not use fake buttons, dead links, random fabricated simulation outputs, or placeholder statistics.
+
+Do not use JavaScript eval to run user-provided code.
+
+## 25. PERFORMANCE AND ACCESSIBILITY
+
+The application must:
+- Work on modern desktop and mobile browsers.
+- Render properly at narrow screen widths.
+- Use semantic HTML.
+- Include keyboard-accessible navigation.
+- Include accessible labels for forms and controls.
+- Maintain readable contrast.
+- Avoid relying on color alone to communicate results.
+- Respect reduced-motion preferences.
+- Avoid unnecessary re-renders and oversized dependencies.
+- Limit simulator qubit counts to a practical safe value.
+- Handle unsupported inputs gracefully.
+
+If a visualization cannot be represented meaningfully in 3D, use an accurate 2D visualization instead.
+
+## 26. IMPLEMENTATION PRIORITY
+
+Build a complete working frontend before adding unnecessary complexity.
+
+Priority 1:
+- Name-only welcome screen.
+- Personalized dashboard.
+- Responsive navigation.
+- All main tabs.
+- Gate encyclopedia.
+- Gate detail pages.
+- Working state-vector simulator.
+- Circuit Studio.
+- Measurement probability charts.
+
+Priority 2:
+- Quantum Academy.
+- Practice Arena.
+- Exactly 25 questions per formal test.
+- Test scoring and review.
+- Improvement recommendations.
+- Entanglement Playground.
+- Saved circuits.
+- Local progress tracking.
+
+Priority 3:
+- Guided labs.
+- Circuit Debugger.
+- Learning Analytics.
+- Achievements.
+- Settings.
+- Search and glossary.
+- Export functionality.
+- Automated tests.
+
+Priority 4, only if supported and properly configured:
+- FastAPI backend.
+- Qiskit and Qiskit Aer integration.
+- Database synchronization.
+- Optional cloud quantum hardware execution.
+
+If time or environment limitations require staged implementation, finish and test the core features before expanding. Do not create superficial versions of every feature at the expense of core functionality.
+
+## 27. ACCEPTANCE CHECKLIST
+
+Before declaring the website complete, verify the following:
+
+- [ ] The first screen requests only the student's name.
+- [ ] Entering a valid name opens the dashboard.
+- [ ] The student name persists after refresh.
+- [ ] The website contains all 14 primary navigation tabs.
+- [ ] Every tab opens a working page.
+- [ ] The gate explorer includes the listed gates.
+- [ ] Gate matrices and explanations are correct.
+- [ ] Interactive gate experiments calculate actual results.
+- [ ] Circuit Studio supports building and editing circuits.
+- [ ] Undo and redo work.
+- [ ] Saved circuits survive refresh.
+- [ ] The simulator calculates state vectors and probabilities correctly.
+- [ ] Measurement counts match the requested number of shots.
+- [ ] Bell-state experiments produce correct ideal probabilities.
+- [ ] Practice questions provide feedback and explanations.
+- [ ] Each formal test contains exactly 25 questions.
+- [ ] Test scoring and answer review work.
+- [ ] Low scores produce useful improvement recommendations.
+- [ ] Learning progress reflects real completed activities.
+- [ ] Achievements unlock only when conditions are met.
+- [ ] The Circuit Debugger validates supported circuit input.
+- [ ] All destructive actions require confirmation.
+- [ ] Theme switching works.
+- [ ] The website is responsive on mobile and desktop.
+- [ ] No visible buttons are non-functional.
+- [ ] No fake hardware execution or fabricated statistics are displayed.
+- [ ] Core functionality works without API keys.
+- [ ] The project starts successfully without compilation errors.
+
+## 28. FINAL INSTRUCTIONS
+
+Start by inspecting the available project environment and create the actual application files.
+
+Build the website as a cohesive product, not as unrelated demonstration pages.
+
+Use reusable components, consistent data models, verified quantum mathematics, meaningful animations, and persistent state.
+
+Make the initial experience visually impressive, but ensure the simulator, circuits, tests, and learning features work correctly.
+
+Do not stop after producing a plan or a homepage. Implement the application, run it, inspect errors, fix them, and test the main user journeys.
+
+If a feature requires an unavailable backend, external service, API key, or quantum hardware account, provide the best honest local alternative and clearly explain the limitation inside the application.
+
+Final objective:
+
+Deliver **QuantumGate Cloud Lab**, a beautiful, student-friendly, interactive quantum computing platform that starts with a name-only welcome screen and develops into a functional personal quantum laboratory for learning, experimenting, building circuits, running simulations, testing knowledge, and tracking improvement.
